@@ -43,7 +43,7 @@ def boxplot(data, manager_col=0, other_cols=None, **kwargs):
             ax_cols.append(oc)
 
     df1 = data[data.columns[ax_cols]]
-    df1 = df1.ix[::, ::-1]
+    df1 = df1.iloc[::, ::-1] # FIX df1 = df1.ix[::, ::-1]
 
     # box charts are so easy
     f = plt.figure(figsize=kwargs.pop('figsize', (8, 6)))
