@@ -54,7 +54,7 @@ def create_performance_summary(data, manager_col=0, other_cols=None, **kwargs):
 
     # the second chart
     df2 = data[data.columns[manager_col]]
-    ax1.bar(df2.index.values, df2.values, align="center", width=20)
+    ax1.bar(df2.index, df2.values, align="center", width=3)
 
     # the third chart
     dd_series = df1.apply(dd, 0)
