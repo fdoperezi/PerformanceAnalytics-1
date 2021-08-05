@@ -25,7 +25,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 from scipy import stats
 
-
 def create_histogram(data, manager_col=0, **kwargs):
     """
     create a chart of 4 histograms
@@ -49,11 +48,11 @@ def create_histogram(data, manager_col=0, **kwargs):
     kde_y = density(b)
     ax2.plot(b, kde_y, '--', linewidth=2)
     # now a normal line
-    normal_y = mlab.normpdf(b, mu, sigma)
+    normal_y = stats.norm.pdf(b, mu, sigma) # normal_y = mlab.normpdf(b, mu, sigma)
     ax2.plot(b, normal_y, '--', linewidth=2)
     # third chart
     ax3.hist(x=df, bins=bins)
-    normal_y2 = mlab.normpdf(b, 0, sigma)
+    normal_y2 = stats.norm.pdf(b, 0, sigma) # normal_y2 = mlab.normpdf(b, 0, sigma)
     ax3.plot(b, normal_y2, '--', linewidth=2)
     # fourth chart
     ax4.hist(x=df, bins=bins)
